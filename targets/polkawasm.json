@@ -5,9 +5,10 @@
 	"build-tags":    ["tinygo.wasm", "polkawasm", "runtime_memhash_leveldb"],
 	"goos":          "linux",
 	"goarch":        "arm",
+	"gc": 					 "none",
 	"linker":        "wasm-ld",
 	"libc":          "",
-	"scheduler":     "asyncify",
+	"scheduler":     "none",
 	"default-stack-size": 16384,
 	"cflags": [
 		"-mbulk-memory",
@@ -17,7 +18,13 @@
 	"ldflags": [
 		"--allow-undefined",
 		"--stack-first",
-		"--no-demangle"
+		"--no-demangle",
+		"--no-entry",
+		"--export=__heap_base",
+  	"--export=__data_end",
+		"--export-dynamic",
+		"--export-table",
+		"--import-memory"
 	],
 	"emulator":      "wasmtime {}",
 	"wasm-abi":      "generic"

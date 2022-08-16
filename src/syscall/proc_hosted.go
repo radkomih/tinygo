@@ -1,5 +1,5 @@
-//go:build !baremetal && !wasi && !wasm
-// +build !baremetal,!wasi,!wasm
+//go:build !baremetal && !wasi && !wasm && !polkawasm
+// +build !baremetal,!wasi,!wasm,!polkawasm
 
 // This file assumes there is a libc available that runs on a real operating
 // system.

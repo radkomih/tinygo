@@ -1,5 +1,5 @@
-//go:build darwin || (linux && !baremetal)
-// +build darwin linux,!baremetal
+//go:build darwin || (linux && !baremetal && !polkawasm)
+// +build darwin linux,!baremetal,!polkawasm
 
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style

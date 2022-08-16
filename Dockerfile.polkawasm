@@ -1,0 +1,36 @@
+# tinygo-base stage includes:
+# - Go 1.18
+# - LLVM 14
+# - TinyGo compiler
+
+# Diffs from the original Dockerfile:
+# - using prebuild LLVM version
+# - using only WASI platform dependencies (wasi-libc, binaryen /lib submodules)
+
+FROM golang:1.18-bullseye AS tinygo-base
+
+# Add the LLVM 14 repo for Debian 11 Bullseye
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
+    echo "deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" | tee /etc/apt/sources.list.d/llvm.list
+# echo "deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main" >> /etc/apt/sources.list.d/llvm.list
+
+# Install LLVM toolchain packages
+RUN apt-get update && apt-get install -y \
+    clang-14 llvm-14-dev lld-14 libclang-14-dev cmake ninja-build
+
+# Copy TinyGo repo
+COPY . /tinygo
+
+# Update submodule
+RUN cd /tinygo/ && \
+    rm -rf ./lib/*/ && \
+    git submodule sync && \
+    git submodule update --init --recursive --force lib/wasi-libc && \
+    git submodule update --init --recursive --force lib/binaryen
+
+# Build WASI libs, Bynaryen (wasm-opts dependency) and the TinyGo compiler
+RUN cd /tinygo/ && \
+    make wasi-libc binaryen && \
+    go install .
+
+CMD ["tinygo"]

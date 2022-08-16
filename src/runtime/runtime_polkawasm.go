@@ -7,11 +7,6 @@ import (
 	"unsafe"
 )
 
-//export __heap_base
-func heapBase() int64 {
-	return int64(uintptr(unsafe.Pointer(&heapStartSymbol)))
-}
-
 //export _start
 func _start() {
 	// These need to be initialized early so that the heap can be initialized.
