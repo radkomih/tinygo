@@ -16,15 +16,13 @@
 		"-msign-ext"
 	],
 	"ldflags": [
-		"--allow-undefined",
-		"--stack-first",
-		"--no-demangle",
 		"--no-entry",
+		"--no-demangle",
+		"--import-memory",
+		"--allow-undefined",
 		"--export=__heap_base",
   	"--export=__data_end",
-		"--export-dynamic",
-		"--export-table",
-		"--import-memory"
+		"--export-table"
 	],
 	"emulator":      "wasmtime {}",
 	"wasm-abi":      "generic"
