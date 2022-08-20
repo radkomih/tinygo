@@ -35,4 +35,6 @@ RUN cd /tinygo/ && \
     make wasi-libc binaryen && \
     go install .
 
+WORKDIR /
+
 CMD ["tinygo"]

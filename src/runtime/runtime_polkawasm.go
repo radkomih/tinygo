@@ -76,3 +76,7 @@ func procPin() {
 //go:linkname procUnpin sync/atomic.runtime_procUnpin
 func procUnpin() {
 }
+
+func extalloc(size uintptr) unsafe.Pointer {
+	return malloc(size)
+}
