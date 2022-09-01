@@ -20,7 +20,8 @@
 		"--no-demangle",
 		"--import-memory",
 		"--export=__heap_base",
-  	"--export=__data_end"
+  	"--export=__data_end",
+		"--export-table"
 	],
 	"emulator":           "wasmtime {}",
 	"wasm-abi":           "generic"
