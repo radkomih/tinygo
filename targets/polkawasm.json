@@ -7,7 +7,7 @@
 	"goarch":             "arm",
 	"linker":             "wasm-ld",
 	"libc":               "",
-	"scheduler":          "asyncify",
+	"scheduler":          "none",
 	"default-stack-size": 16384,
 	"cflags": [
     "-mbulk-memory",
