@@ -1,5 +1,5 @@
-//go:build !linux || baremetal
-// +build !linux baremetal
+//go:build !linux || baremetal || polkawasm
+// +build !linux baremetal polkawasm
 
 package os
 

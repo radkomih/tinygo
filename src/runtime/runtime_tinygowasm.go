@@ -1,5 +1,5 @@
-//go:build tinygo.wasm
-// +build tinygo.wasm
+//go:build tinygo.wasm && !polkawasm
+// +build tinygo.wasm,!polkawasm
 
 package runtime
 
