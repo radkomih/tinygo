@@ -16,7 +16,6 @@
   ],
 	"ldflags": [
     "--allow-undefined",
-		"--stack-first",
 		"--no-demangle",
 		"--import-memory",
 		"--export=__heap_base",
