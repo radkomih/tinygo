@@ -18,7 +18,9 @@
     "--allow-undefined",
 		"--stack-first",
 		"--no-demangle",
-		"--import-memory"
+		"--import-memory",
+		"--export=__heap_base",
+  	"--export=__data_end"
 	],
 	"emulator":           "wasmtime {}",
 	"wasm-abi":           "generic"
