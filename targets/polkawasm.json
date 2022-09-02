@@ -6,6 +6,7 @@
 	"goos":               "linux",
 	"goarch":             "arm",
 	"gc":                 "conservative",
+    "opt":                "0",
 	"linker":             "wasm-ld",
 	"libc":               "",
 	"scheduler":          "none",

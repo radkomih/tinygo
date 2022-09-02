@@ -32,3 +32,6 @@ test.hex
 test.nro
 test.wasm
 wasm.wasm
+
+# JetBrains
+.idea
