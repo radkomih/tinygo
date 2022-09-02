@@ -12,6 +12,7 @@
 	"default-stack-size": 16384,
 	"cflags": [],
 	"ldflags": [
+		"--initial-memory=1310720",
     "--allow-undefined",
 		"--no-demangle",
 		"--import-memory",
