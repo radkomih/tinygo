@@ -38,7 +38,7 @@ func getchar() byte {
 }
 
 func buffered() int {
-	return -1 // TODO:POLKAWASM check
+	return -1
 }
 
 type timeUnit int64

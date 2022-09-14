@@ -1,11 +1,7 @@
 # tinygo-base stage includes:
 # - Go 1.18
 # - LLVM 14
-# - TinyGo compiler
-
-# Diffs from the original Dockerfile:
-# - prebuild LLVM version
-# - only WASI platform dependencies (wasi-libc, binaryen /lib submodules)
+# - TinyGo fork
 
 FROM golang:1.18-bullseye AS tinygo-base
 
