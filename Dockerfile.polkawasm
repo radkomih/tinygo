@@ -1,9 +1,9 @@
 # tinygo-base stage includes:
-# - Go 1.18
+# - Go 1.19.5
 # - LLVM 14
 # - TinyGo fork
 
-FROM golang:1.18-bullseye AS tinygo-base
+FROM golang:1.19.5-bullseye AS tinygo-base
 
 ENV GO111MODULE=on
 ENV GOFLAGS="-buildvcs=false"
